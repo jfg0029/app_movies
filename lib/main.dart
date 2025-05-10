@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Material App',
       getPages: AppPages.routes,
-      initialRoute: Routes.LOADING,
+      initialRoute: Routes.REGISTER,
     );
   }
 }
