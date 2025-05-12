@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_with_firebase_ow/auth/structure/controllers/auth_controller.dart';
 import 'package:flutter_with_firebase_ow/auth/utils/validators_utils.dart';
+import 'package:get/get.dart';
 
 class CardRegisterForm extends StatelessWidget {
 CardRegisterForm({ Key? key }) : super(key: key);
@@ -9,6 +11,7 @@ final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context){
     FormValidator formValidator = FormValidator();
+    AuthController authController = Get.find();
     return Form(
       key: _formKey,
       child: Card(
@@ -32,6 +35,7 @@ final _formKey = GlobalKey<FormState>();
               Flexible(
                 child: TextFormField(
                   validator: formValidator.isValidEmail,
+                  controller: authController.emailController,
                   decoration: const InputDecoration(
                     hintText: "Escribe tu email",
                   ),
@@ -42,6 +46,7 @@ final _formKey = GlobalKey<FormState>();
                 child: TextFormField(
                   obscureText: true,
                   validator: formValidator.isValidPass,
+                  controller: authController.passwordController,
                   decoration: const InputDecoration(
                     hintText: "Escribe tu contraseña",
                   ),
@@ -51,6 +56,7 @@ final _formKey = GlobalKey<FormState>();
               TextButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+                    authController.registerWithEmailAndPssword();
                     print("Este formulario es válido");
                   } else {
                     print("Vuelve a intentarlo");
