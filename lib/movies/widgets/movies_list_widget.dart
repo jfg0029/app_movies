@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_with_firebase_ow/movies/models/movie_model.dart';
 import 'package:flutter_with_firebase_ow/movies/utils/urls_db.dart';
 import 'package:flutter_with_firebase_ow/movies/widgets/item_movie_widget.dart';
-// import 'package:flutter_with_firebase_ow/movies/widgets/item_movie_widget.dart';
+
 
 class MoviesListWidget extends StatelessWidget {
   // Importar los parámetros en el constructor que necesitamos pasar de forma global

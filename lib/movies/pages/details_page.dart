@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_with_firebase_ow/movies/models/movie_model.dart';
+import 'package:flutter_with_firebase_ow/movies/services/movies_firebase_repository.dart';
 import 'package:flutter_with_firebase_ow/themes/colors_theme.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +18,7 @@ class DetailsPage extends StatelessWidget {
           print(movie!.toJson());
           final Map<String, dynamic> data = movie!.toJson();
           print(data);
-          // MoviesFirebaseRepository().setMoviesFirebse(data: data);
+          MoviesFirebaseRepository().setMoviesFirebase(data: data);
         },
         child: const Icon(Icons.add, size: 40),
       ),
