@@ -3,6 +3,7 @@ import 'package:flutter_with_firebase_ow/auth/pages/login_page.dart';
 import 'package:flutter_with_firebase_ow/auth/pages/register_page.dart';
 import 'package:flutter_with_firebase_ow/movies/pages/details_page.dart';
 import 'package:flutter_with_firebase_ow/movies/pages/movies_home.dart';
+import 'package:flutter_with_firebase_ow/movies/structure/bindings/movies_binding.dart';
 import 'package:flutter_with_firebase_ow/routes/app_routes.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +23,8 @@ class AppPages {
     ),
     GetPage(
       name: Routes.HOME,
-      page: () => const MoviesHome()
+      page: () => const MoviesHome(),
+      binding: MoviesBinding(),
     ),
     GetPage(
       name: Routes.DETAILS,

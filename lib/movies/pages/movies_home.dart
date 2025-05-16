@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_with_firebase_ow/movies/structure/controllers/movies_controller.dart';
 //import 'package:flutter_with_firebase_ow/auth/structure/controllers/auth_controller.dart';
 import 'package:flutter_with_firebase_ow/movies/widgets/section_film_widget.dart';
 //import 'package:get/get.dart';
+
 
 class MoviesHome extends StatelessWidget {
 const MoviesHome({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context){
-   // AuthController authController = Get.find();
+    //AuthController authController = Get.find();
     return Scaffold(
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -34,7 +36,7 @@ const MoviesHome({ Key? key }) : super(key: key);
       ),
       appBar: AppBar(
         title: const Center(
-          child: Text("Mis Películas",
+          child: Text("MIS PELÍCULAS",
           style: TextStyle(color: Colors.blue),
           ),
         ),
