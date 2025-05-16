@@ -19,7 +19,7 @@ class ItemMovieWidget extends StatelessWidget{
     return GestureDetector(
       onTap: () {
         //Navegación hacia otra pantalla
-        //Get.toNamed(Routes.DETAILS);
+        Get.toNamed(Routes.DETAILS);
         Navigator.pushNamed(context, Routes.DETAILS, arguments: movie);   
         Get.to(
           DetailsPage(
