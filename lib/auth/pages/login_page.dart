@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_with_firebase_ow/auth/structure/controllers/auth_controller.dart';
 import 'package:flutter_with_firebase_ow/auth/widgets/card_login_form.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    AuthController authController = Get.find();
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){},),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        authController.loginWithGoogle();
+      },),
       backgroundColor: Colors.orange,
       body: Container(
         height: double.infinity,
