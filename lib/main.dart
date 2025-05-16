@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Material App',
       getPages: AppPages.routes,
-      initialRoute: Routes.LOGIN,
+      initialRoute: Routes.HOME,
       initialBinding: BindingsBuilder((){
         Get.put<AuthController>(AuthController());
       }),
