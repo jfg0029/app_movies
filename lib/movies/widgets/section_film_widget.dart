@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_with_firebase_ow/movies/widgets/movies_list_firebase_widget.dart';
 import 'package:flutter_with_firebase_ow/movies/widgets/movies_list_popular_widget.dart';
 import 'package:flutter_with_firebase_ow/themes/colors_theme.dart';
 
@@ -30,9 +31,9 @@ const SectionFilmsWidget({ Key? key }) : super(key: key);
               ),
 
               // Esta es la lista de películas ordenadas en función de popularidad
-              // MoviesListFirebaseWidget(
-              //   titleSection: "PELÍCULAS DESDE FIREBASE"
-              // ),
+              MoviesListFirebaseWidget(
+                titleSection: "PELÍCULAS DESDE FIREBASE"
+              ),
               SizedBox(
                 height: 100,
                 ),
