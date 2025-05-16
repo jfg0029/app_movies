@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_with_firebase_ow/movies/widgets/movies_list_popular_widget.dart';
 import 'package:flutter_with_firebase_ow/themes/colors_theme.dart';
 
 class SectionFilmsWidget extends StatelessWidget {
@@ -24,11 +25,11 @@ const SectionFilmsWidget({ Key? key }) : super(key: key);
           child: Column(
             children: const [
               // Esta es la lista de la películas populares de origen
-              // MoviesListPopularWidget(
-              //   titleSection: "RECOMENDADO PARA TI",
-              // ),
+              MoviesListPopularWidget(
+                titleSection: "RECOMENDADO PARA TI",
+              ),
 
-              // // Esta es la lista de películas ordenadas en función de popularidad
+              // Esta es la lista de películas ordenadas en función de popularidad
               // MoviesListFirebaseWidget(
               //   titleSection: "PELÍCULAS DESDE FIREBASE"
               // ),
