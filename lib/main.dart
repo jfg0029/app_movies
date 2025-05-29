@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Material App',
+      title: 'Movie App',
       getPages: AppPages.routes,
       initialRoute: Routes.HOME,
       initialBinding: BindingsBuilder((){

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_with_firebase_ow/auth/structure/controllers/auth_controller.dart';
 //import 'package:flutter_with_firebase_ow/movies/structure/controllers/movies_controller.dart';
 //import 'package:flutter_with_firebase_ow/auth/structure/controllers/auth_controller.dart';
 import 'package:flutter_with_firebase_ow/movies/widgets/section_film_widget.dart';
@@ -19,7 +20,7 @@ const MoviesHome({ Key? key }) : super(key: key);
             heroTag: "1",
             child: const Icon(Icons.close),
             onPressed: (){
-              //authController.signOut();
+              AuthController().signOut();
             }),
             const SizedBox(
               width: 20,
