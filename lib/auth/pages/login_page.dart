@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_with_firebase_ow/auth/structure/controllers/auth_controller.dart';
 import 'package:flutter_with_firebase_ow/auth/widgets/card_login_form.dart';
+import 'package:flutter_with_firebase_ow/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
@@ -34,10 +35,12 @@ class LoginPage extends StatelessWidget {
               Expanded(child: CardLoginForm(),),
             const SizedBox(height: 40),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.offAllNamed(Routes.REGISTER);
+              },
               child: const Text(
-                "Iniciar Sesión",
-                style: TextStyle(color: Colors.white),
+                "Ir a registro",
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,),
               ),
             ),
           ],

@@ -64,7 +64,7 @@ final _formKey = GlobalKey<FormState>();
                 },
                 child: Text(
                   "REGISTRARME",
-                  style: TextStyle(color: Colors.pink),
+                  style: TextStyle(color: Colors.pink, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
