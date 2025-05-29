@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_with_firebase_ow/auth/widgets/card_register_form.dart';
+import 'package:flutter_with_firebase_ow/routes/app_routes.dart';
+import 'package:get/get.dart';
 
 class RegisterPage extends StatelessWidget {
 const RegisterPage({ Key? key }) : super(key: key);
@@ -30,9 +32,11 @@ const RegisterPage({ Key? key }) : super(key: key);
               ),
             const SizedBox(height: 40),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.offAllNamed(Routes.LOGIN);
+              },
               child: const Text(
-                "Registrarse",
+                "Ir a Login",
                 style: TextStyle(color: Colors.white),
               ),
             ),

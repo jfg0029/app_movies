@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_with_firebase_ow/movies/models/movie_model.dart';
 import 'package:flutter_with_firebase_ow/movies/services/movies_firebase_repository.dart';
+import 'package:flutter_with_firebase_ow/routes/app_routes.dart';
 import 'package:flutter_with_firebase_ow/themes/colors_theme.dart';
 import 'package:get/get.dart';
 
 class DetailsPage extends StatelessWidget {
   final String? src;
   final Movie? movie;
-  const DetailsPage({Key? key, this.src, this.movie}) : super(key: key);
+  const DetailsPage({super.key, this.movie, this.src});
 
   @override
   Widget build(BuildContext context) {
+    // Manejo de casos nulos
+    if (src == null || movie == null) {
+      return Scaffold(
+        backgroundColor: AppColors.darkBackground,
+        body: const Center(
+          child: Text(
+            'Error: Película o imagen no disponible',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: AppColors.darkBackground,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          // No necesitas ! porque ya verificamos que movie no es null
           print(movie!.toJson());
           final Map<String, dynamic> data = movie!.toJson();
           print(data);
@@ -33,8 +48,8 @@ class DetailsPage extends StatelessWidget {
               child: Stack(
                 children: [
                   Image.network(
-                    src!, 
-                    fit: BoxFit.fill, 
+                    src!, // Ya verificamos que src no es null
+                    fit: BoxFit.fill,
                     width: double.infinity,
                   ),
                   Container(
@@ -54,7 +69,7 @@ class DetailsPage extends StatelessWidget {
                             size: 35,
                           ),
                           onPressed: () {
-                            Get.back();
+                            Get.offAllNamed(Routes.HOME);
                           },
                         ),
                       ],
@@ -70,12 +85,14 @@ class DetailsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    movie!.originalTitle!,
+                    movie!.originalTitle ??
+                        'Título no disponible', // Manejo de originalTitle nulo
                     style: const TextStyle(color: Colors.white, fontSize: 30),
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    movie!.overview!,
+                    movie!.overview ??
+                        'Descripción no disponible', // Manejo de overview nulo
                     style: const TextStyle(color: Colors.white, fontSize: 12),
                   ),
                 ],

@@ -47,15 +47,18 @@ class CardLoginForm extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    authController.loginWithEmailAndPssword();
                     print("Este formulario es válido");
+                    authController.loginWithEmailAndPssword();
                   } else {
                     print("Vuelve a intentarlo");
                   }
                 },
-                child: Text(
-                  "Iniciar sesión",
-                  style: TextStyle(color: Colors.pink),
+                child: const Text(
+                  "INICIAR SESIÓN",
+                  style: TextStyle(
+                    color: Colors.pink,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
