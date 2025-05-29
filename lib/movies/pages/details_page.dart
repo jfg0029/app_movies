@@ -32,7 +32,11 @@ class DetailsPage extends StatelessWidget {
               height: 350,
               child: Stack(
                 children: [
-                  Image.network(src!, fit: BoxFit.fill, width: double.infinity),
+                  Image.network(
+                    src!, 
+                    fit: BoxFit.fill, 
+                    width: double.infinity,
+                  ),
                   Container(
                     height: double.infinity,
                     width: double.infinity,

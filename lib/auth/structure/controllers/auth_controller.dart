@@ -28,4 +28,8 @@ class AuthController extends GetxController {
   loginWithGoogle() async {
     firebaseUser.value = await AuthFirebaseRepository().signInWithGoogle();
   }
+
+  Future<void> signOut() async{
+    _auth.signOut();
+  }
 }
